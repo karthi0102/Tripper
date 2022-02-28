@@ -1,0 +1,65 @@
+<% layout('layouts/boilerplate')%>
+<style>
+    .img{
+        height: 300px;
+        width: 100%;
+    }
+    .new{
+        padding-top: 15px;
+    }
+    .new a{
+        text-decoration: none;
+        color:black;
+    }
+
+</style>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-sm-12 col-md-4 offset-md-4">
+            <div class="card shadow mt-5">
+                <img src="https://w0.peakpx.com/wallpaper/182/72/HD-wallpaper-summer-of-the-maldives-rest-vacation-exotic-ocean-maldives-breeze-beautiful-sky-palms-sea-beach-paradise-summer-island-tropics-sands-relax.jpg" alt="" class="card-img-top img" />
+                <div class="card-body">
+                    <p class="display-6 text-center hello"> <p>
+                    <h5 class="card-title text-center">LOGIN TRIPPER</h5>
+                    <form action="/login" method="POST" class="validated-form" novalidate autocomplete="off">
+                        <div class="mb-3">
+                            <label class="form-label" for="username">Username</label>
+                            <input  class="form-control user" type="text" id="username" name="username" autofocus required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="password">Password</label>
+                            <input class="form-control" type="password" id="password" name="password" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-success btn-block">Start Exploring</button>
+                        </div>
+                        
+                    </form>
+                    <div class="text-center new">
+                    <a href="/register"><i class="fa-solid fa-users"></i> NEW USER</a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const h= document.querySelector('.hello');
+    const i = document.querySelector('.user');
+    i.addEventListener('input',()=>{
+        if(i.value==''){
+        h.textContent=" ";
+        }else{
+            h.textContent=`Hello ${i.value}..!`
+        }
+    })
+    
+</script>

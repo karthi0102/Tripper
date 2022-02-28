@@ -1,0 +1,56 @@
+<% layout('layouts/boilerplate')%>
+<style>
+    label{
+        font-size: 30px;
+    }
+    .date{
+        display: none;
+    }
+</style>
+<div class="container my-5">
+
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <div class="card shadow">
+            <div class="card-body">
+                <p class="text-center display-5">Edit <%=campground.title%></p>
+        <form action="/spots/<%=campground._id%>?_method=PUT" method="POST" novalidate class="validated-form"
+            enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id="title" name="campground[title]"
+                    value="<%=campground.title %>" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Location</label>
+                <input class="form-control" type="text" id="location" name="campground[location]"
+                    value="<%=campground.location %>" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3 date">
+                <input type="text" name="campground[date]" value="<%=campground.date%>" id="">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" type="text" cols="7" rows="7" id="description" name="campground[description]"
+                    required><%= campground.description%></textarea>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="d-grid gap-2">
+                <button class="btn btn-info">Update <%=campground.title%></button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+
+</div>

@@ -1,0 +1,59 @@
+<style>
+   .navbar{
+       background:#2E8B57;
+       
+   }
+   .nav-link,.navbar-brand{
+       color: white;
+   }
+   .nav-link:hover{
+       color:white;
+       
+       padding-bottom:3px;
+       border-bottom: 2px solid white;
+   }
+   nav .navbar-brand:hover{
+            color:white;
+            transform: none;
+            border-bottom: none;
+   }
+
+  nav button i {
+       color: #2E8B57;
+       
+   }
+nav button{
+  background: white !important;
+}
+ 
+   
+  
+</style>
+
+
+<nav class="navbar sticky-top navbar-expand-lg ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><i class="fa-solid fa-car"></i> Tripper</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <a class="nav-link" href="/"><i class="fa-solid fa-house"></i> Home</a>
+                <a class="nav-link" href="/spots"><i class="fa-solid fa-location-dot"></i> Spots</a>
+                <a class="nav-link" href="/about"><i class="fa-solid fa-house"></i> About</a>
+        </ul>
+   
+      <div class="navbar-nav ml-auto">
+        <% if(!currentUser) {%>
+        <a class="nav-link" href="/login"><i class="fa-solid fa-person-hiking"></i> Login</a>
+        <a class="nav-link" href="/register"><i class="fa-solid fa-registered"></i> Register</a>
+        <% } else {%>
+        <a class="nav-link" href="/map"><i class="fa-solid fa-location-crosshairs"></i> Map</a>
+        <a class="nav-link" href="/logout"><i class="fa-solid fa-user-large-slash"></i> Logout</a>
+        <% } %>
+    </div>
+    </div>
+</div>
+  </nav>
+

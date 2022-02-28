@@ -1,0 +1,69 @@
+<% layout('layouts/boilerplate')%>
+<style>
+        #cluster-map{
+        border: 3px solid #2E8B57;
+        margin-bottom: 5px;
+    }
+    body{
+        background-image: url("https://images.unsplash.com/photo-1605478185737-99ae313e940c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJsdWUlMjBiYWNrZ3JvdW5kc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .typewriter {
+    
+	text-align: center;
+    display: block;
+}
+
+.typewriter-text {
+    
+    display: inline-block;
+  	overflow: hidden;
+  	letter-spacing: 2px;
+ 	animation: typing 5s steps(30, end), blink .75s step-end infinite;
+    white-space: nowrap;
+    font-size: 30px;
+  
+    /* border-right: 4px solid orange; */
+    box-sizing: border-box;
+}
+
+@keyframes typing {
+    from { 
+        width: 0% 
+    }
+    to { 
+        width: 100% 
+    }
+}
+
+@keyframes blink {
+    from, to { 
+        border-color: transparent 
+    }
+    50% { 
+        border-color: orange; 
+    }
+}
+@media (max-width:1000px) {
+    .typewriter-text{
+        letter-spacing: 0.7px;
+        font-size: 13px;
+    }
+}
+</style>
+<div class="container my-3">
+
+
+    <div class="typewriter">
+      <div class="typewriter-text">I'm just the smallest dot in a big map<br> -  TRIPPER MAPS</div>
+</div>
+
+<div id="cluster-map"></div>
+</div>
+<script>
+    const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
+    const campgrounds = { features: <%- JSON.stringify(campgrounds) %>}
+</script>
+
+<script src="/javascripts/clusterMap.js"></script>

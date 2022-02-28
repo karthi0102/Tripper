@@ -1,0 +1,47 @@
+<% layout('layouts/boilerplate')%>
+
+<link rel="stylesheet" href="/stylesheets/fbutton.css">
+<link rel="stylesheet" href="/stylesheets/index.css">
+<style>
+ .animate__animated.animate__zoomIn {
+    --animate-duration: 2s;
+  }
+  .item{
+    border-radius: 10px;
+    transition: 1s;
+  }
+  .item:hover{
+      transform: scale(1.2);
+      padding: 30px 30px 30px 30px;
+  }
+</style>
+<div class="container mt-2">
+    <div class="team-boxed ">
+        <div class="row d-flex justify-content-center">
+            <div class="typewriter col-12">
+                <div class="typewriter-text">EXPLORE THE SPOTS...! 
+                   <br> - TRIPPER</div>
+                </div>
+        </div>
+        <div class="row people d-flex justify-content-center ">
+           
+            <% for(let campground of campgrounds) {%>
+                <div class=" col-sm-12 col-md-6 col-lg-4 item">
+                    <div class="box animate__animated animate__zoomIn"><img class="rounded-circle" src="<%=campground.images[0].url%>" style="height: 140px;">
+                        <h3 class="name"><%=campground.title%></h3>
+                        <p class="title"><%=campground.location %></p>
+                        <p class="description" style="height: 110px;"><%=campground.description.substring(0,200) %>...</p>
+                        <a href="/spots/<%=campground._id%>">VIEW <%=campground.title%></a>
+                        
+                      
+            </div>
+            </div>
+            <%}%>
+    </div>
+    </div>
+</div>
+
+
+<a href="/spots/new" class="float">
+    <i class="fa fa-plus my-float" ></i>
+</a>

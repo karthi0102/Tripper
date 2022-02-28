@@ -1,0 +1,34 @@
+.float{
+    
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:80px;
+	right:40px;
+	color:#2E8B57;
+	border-radius:50px;
+	background: white;
+	text-align:center;
+	box-shadow: 2px 2px 3px slategray;
+	transition: 500ms;
+}
+
+.float:hover{
+	color:white;
+	background-color:#2E8B57;;
+}
+
+.my-float{
+	margin-top:22px;
+    margin-bottom: 10px;
+}
+.navbar{
+    color:mintcream;
+    opacity: 90%;
+}
+
+@media (max-width:1000px) {
+	.float{
+		bottom: 50px;
+	}
+}

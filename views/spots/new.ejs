@@ -1,0 +1,61 @@
+<% layout('layouts/boilerplate')%>
+<style>
+   p{
+      color:#238b57;
+    }
+    .date{
+        display: none;
+    }
+    label{
+        font-size: 30px;
+    }
+</style>
+<div class="container my-5">
+
+
+<div class="row mb-3">
+    <div class="col-sm-12 col-md-6 offset-md-3">
+    <div class="card shadow">
+        <div class="card-body">
+    <p class="text-center display-5">Explore your Experience to Others</p>
+   
+        <form action="/spots" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id="title" name="campground[title]" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Location</label>
+                <input class="form-control" type="text" id="location" name="campground[location]" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Spot Image</label>
+                <input class="form-control" type="file" id="formFile" name="image" multiple>
+              </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" rows="4" col="4" type="text" id="description" name="campground[description]"
+                    required></textarea>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3 date">
+                <input type="text" name="campground[date]" value="<%=cDate%>" id="">
+            </div>
+            <div class="d-grid gap-2">
+                <button class="btn btn-success">Share your thought</button>
+            </div>
+        </form>
+    </div>
+</div>
+    </div>
+</div>
+</div>
