@@ -5,7 +5,8 @@
 	height:60px;
 	bottom:80px;
 	right:40px;
-	color:#2E8B57;
+	color:green;
+	background-color: #2E8B57;
 	border-radius:50px;
 	background: white;
 	text-align:center;
@@ -15,7 +16,7 @@
 
 .float:hover{
 	color:white;
-	background-color:#2E8B57;;
+	background-color:green;
 }
 
 .my-float{

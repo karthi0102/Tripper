@@ -15,7 +15,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('./models/user');
 const MongoStore = require('connect-mongo')
-
+const swal = require('sweetalert')
 const db_url='mongodb://localhost:27017/Campgrounds'
 const mongoSanitize = require('express-mongo-sanitize');
 const userRoutes = require('./routes/users');
@@ -107,6 +107,7 @@ app.get('/about',async(req,res)=>{
 
 app.post('/about', (req, res) => {
     const { email, feedback } = req.body;
+    
     console.log('Data: ', req.body);
 
     sendMail(email,feedback, function(err, data) {
@@ -114,8 +115,8 @@ app.post('/about', (req, res) => {
             console.log('ERROR: ', err);
             return res.status(500).json({ message: err.message || 'Internal Error' });
         }
-        req.flash("success",'Email sent successfully')
-        return res.redirect('/');
+        req.flash("success","Email sent succesfullly")
+        return res.redirect('/spots');
     });
 });
 
