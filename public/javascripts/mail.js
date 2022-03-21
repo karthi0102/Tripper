@@ -20,7 +20,7 @@ const sendMail = (email, feedback, cb) => {
         from: email, // TODO replace this with your own emai
         to: "karthirajendran12003@gmail.com", // TODO: the receiver email has to be authorized for the free tier
         subject :'Tripper',
-        text: `FEEDBACK: ${feedback}`
+        text: `FEEDBACK: ${feedback.trim()}`
     };
 
     transporter.sendMail(mailOptions, function (err, data) {

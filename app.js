@@ -16,7 +16,7 @@ const LocalStrategy = require('passport-local');
 const User = require('./models/user');
 const MongoStore = require('connect-mongo')
 const swal = require('sweetalert')
-const db_url='mongodb://localhost:27017/Campgrounds'
+const db_url=process.env.DB_URL;
 const mongoSanitize = require('express-mongo-sanitize');
 const userRoutes = require('./routes/users');
 const campgroundRoutes = require('./routes/campgrounds');
@@ -45,6 +45,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(mongoSanitize({
     replaceWith: '_'
 }))
+
 app.use(express.static(path.join(__dirname,'public')) )
 const store=new  MongoStore({
     mongoUrl:db_url,
@@ -115,8 +116,7 @@ app.post('/about', (req, res) => {
             console.log('ERROR: ', err);
             return res.status(500).json({ message: err.message || 'Internal Error' });
         }
-        req.flash("success","Email sent succesfullly")
-        return res.redirect('/spots');
+        return res.redirect('/about');
     });
 });
 
